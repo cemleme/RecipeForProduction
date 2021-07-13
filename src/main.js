@@ -6,6 +6,7 @@ import { Quasar } from "quasar";
 import quasarUserOptions from "./quasar-user-options";
 
 import firebase from 'firebase/app';
+import 'firebase/auth';
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -24,10 +25,12 @@ firebase.initializeApp(firebaseConfig);
 
 
 import BaseCard from './components/UI/BaseCard.vue';
+import BaseList from './components/UI/BaseList.vue';
 
 const app = createApp(App).use(Quasar, quasarUserOptions);
 
 app.component('base-card', BaseCard);
+app.component('base-list', BaseList);
 
 app
   .use(store)
